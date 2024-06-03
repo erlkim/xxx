@@ -127,11 +127,11 @@ clear
 #########################
 # USERNAME
 rm -f /usr/bin/user
-username=$(curl https://github.com/erlkim/xxx | grep $MYIP | awk '{print $2}')
+username=$(curl https://github.com/erlkim/key | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
 # validity
 rm -f /usr/bin/e
-valid=$(curl https://github.com/erlkim/xxx | grep $MYIP | awk '{print $4}')
+valid=$(curl https://github.com/erlkim/key | grep $MYIP | awk '{print $4}')
 echo "$valid" >/usr/bin/e
 # DETAIL ORDER
 username=$(cat /usr/bin/user)
@@ -155,7 +155,7 @@ mai="datediff "$Exp" "$DATE""
 Info="(${green}Active${NC})"
 Error="(${RED}ExpiRED${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl https://github.com/erlkim/xxx | grep $MYIP | awk '{print $4}')
+Exp1=$(curl https://github.com/erlkim/key | grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -164,7 +164,7 @@ fi
 echo -e "\e[32mloading...\e[0m"
 clear
 # REPO    
-    REPO="https://github.com/erlkim/xxx/"
+    REPO="https://github.com/erlkim/key/"
 
 ####
 start=$(date +%s)
