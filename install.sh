@@ -851,7 +851,7 @@ function menu(){
     wget -O ~/menu.zip "${REPO}menu/menu.zip" >/dev/null 2>&1
     mkdir /root/menu
     unzip menu.zip; -o/root/menu/ >/dev/null 2>&1
-#    7z e -pmeki   ~/menu.zip -o/root/menu/ >/dev/null 2>&1
+    7z e -pmeki   ~/menu.zip -o/root/menu/ >/dev/null 2>&1
     chmod +x /root/menu/*
     mv /root/menu/* /usr/local/sbin/
     #botmintod
@@ -927,8 +927,8 @@ EOF
 echo "/bin/false" >>/etc/shells
 echo "/usr/sbin/nologin" >>/etc/shells
 cat >/etc/rc.local <<EOF
-#!/bin/sh -e
-# rc.local
+!/bin/sh -e
+ rc.local
 # By default this script does nothing.
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
